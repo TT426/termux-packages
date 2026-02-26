@@ -53,7 +53,7 @@ if [ -f "${TERMUX_SCRIPTDIR}/build-tools/.installed" ]; then
 fi
 
 # Lock file to prevent parallel running in the same environment.
-TERMUX_BUILD_LOCK_FILE="${TMPDIR}/.termux-build.lck"
+TERMUX_BUILD_LOCK_FILE="${TMPDIR}/.xpmall-build.lck"
 if [ ! -e "$TERMUX_BUILD_LOCK_FILE" ]; then
 	touch "$TERMUX_BUILD_LOCK_FILE"
 fi
