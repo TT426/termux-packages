@@ -130,7 +130,7 @@ BOOTSTRAP_PACKAGES=(
     #"proot"               # chroot replacement
     # "nodejs"            # Skipped
     # "websocat"          # Skipped (Rust build issues)
-    "binutils-is-llvm"    # Used for checking symbols
+    # "binutils-is-llvm"    # Used for checking symbols
 )
 
 # Function to build a package
