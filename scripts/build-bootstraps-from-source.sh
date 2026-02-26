@@ -86,7 +86,6 @@ BOOTSTRAP_PACKAGES=(
     # ========== Core Utilities ==========
     "bash"                # Bourne Again Shell
     "libbz2"              # bzip2 library
-    "command-not-found"   # Command suggestions
     "coreutils"           # Core system utilities
     "dash"                # Debian Almquist Shell
     "diffutils"           # File comparison
@@ -128,9 +127,10 @@ BOOTSTRAP_PACKAGES=(
     "jq"                  # JSON processor
     "pcre"                # Perl Compatible Regular Expressions
     "logrotate"           # Log rotation
-    "proot"               # chroot replacement
+    #"proot"               # chroot replacement
     # "nodejs"            # Skipped
     # "websocat"          # Skipped (Rust build issues)
+    "binutils-is-llvm"    # Used for checking symbols
 )
 
 # Function to build a package
