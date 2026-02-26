@@ -23,23 +23,4 @@ termux_step_setup_toolchain() {
 		fi
 		termux_setup_toolchain_gnu
 	fi
-	# ===== 在这里添加：去除调试路径 =====
-  # 去除 -g 调试标志
-  # 去除 -g 调试标志，并清理多余空格
-  CFLAGS="${CFLAGS//-g/}"
-  CFLAGS="${CFLAGS//  / }"
-  CFLAGS="${CFLAGS# }"
-  CFLAGS="${CFLAGS% }"
-
-  CXXFLAGS="${CXXFLAGS//-g/}"
-  CXXFLAGS="${CXXFLAGS//  / }"
-  CXXFLAGS="${CXXFLAGS# }"
-  CXXFLAGS="${CXXFLAGS% }"
-
-  # 路径重映射（使用变量更灵活）
-  local BUILD_ROOT="${TERMUX_TOPDIR:-/home/runner/.termux-build}"
-  # 合并为一个 flag 减少命令行长度
-  CFLAGS+=" -ffile-prefix-map=$BUILD_ROOT= -ffile-prefix-map=$HOME=~"
-  CXXFLAGS+=" -ffile-prefix-map=$BUILD_ROOT= -ffile-prefix-map=$HOME=~"
-  export CFLAGS CXXFLAGS
 }
