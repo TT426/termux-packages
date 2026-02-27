@@ -127,7 +127,7 @@ BOOTSTRAP_PACKAGES=(
     "jq"                  # JSON processor
     "pcre"                # Perl Compatible Regular Expressions
     "logrotate"           # Log rotation
-    #"proot"               # chroot replacement
+    "proot"               # chroot replacement
     # "nodejs"            # Skipped
     # "websocat"          # Skipped (Rust build issues)
     # "binutils-is-llvm"    # Used for checking symbols
