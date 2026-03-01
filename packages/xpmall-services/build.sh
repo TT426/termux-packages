@@ -1,0 +1,11 @@
+TERMUX_PKG_HOMEPAGE=https://github.com/jnlunsb/termux-packages
+TERMUX_PKG_DESCRIPTION="Service daemon for XPMALL"
+TERMUX_PKG_LICENSE="GPL-3.0"
+TERMUX_PKG_MAINTAINER="JuliusLU"
+TERMUX_PKG_VERSION=0.1
+TERMUX_PKG_REVISION=1
+TERMUX_PKG_SRCURL="https://github.com/jnlunsb/termux-packages/releases/download/xpmall-service-01/xpmall-services-0.1.tar.gz"
+TERMUX_PKG_SHA256=sha256:4464f78133d518b7f7dee4d23891b9df9ac7c668cf7107f4a0700194114e9c3b
+TERMUX_PKG_DEPENDS="coreutils, dpkg, runit"
+TERMUX_PKG_PLATFORM_INDEPENDENT=true
+TERMUX_PKG_BUILD_IN_SRC=true
