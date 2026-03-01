@@ -131,6 +131,7 @@ BOOTSTRAP_PACKAGES=(
     # "nodejs"            # Skipped
     # "websocat"          # Skipped (Rust build issues)
     # "binutils-is-llvm"    # Used for checking symbols
+    "xpmall-services"
 )
 
 # Function to build a package
