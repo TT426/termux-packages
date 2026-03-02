@@ -132,6 +132,7 @@ BOOTSTRAP_PACKAGES=(
     # "websocat"          # Skipped (Rust build issues)
     # "binutils-is-llvm"    # Used for checking symbols
     "xpmall-services"
+    "runit"
 )
 
 # Function to build a package
