@@ -98,7 +98,7 @@ BOOTSTRAP_PACKAGES=(
     "psmisc"              # Process management
     "sed"                 # Stream editor
     "tar"                 # Archive utility
-   # "termux-exec"         # Termux exec wrapper
+    "termux-exec"         # Termux exec wrapper
    # "termux-tools"        # Termux tools
     "util-linux"          # System utilities
     "libuuid"             # UUID library (subpackage of util-linux)
