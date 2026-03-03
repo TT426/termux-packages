@@ -35,7 +35,7 @@ termux_step_install_service_scripts() {
 			mkdir -p "$(dirname "${_log_run}")"
 			cat <<-EOF > "${_log_run}"
 				#!$TERMUX_PREFIX/bin/sh
-				svlogger="$TERMUX_PREFIX/share/termux-services/svlogger"
+				svlogger="$TERMUX_PREFIX/share/xpmall-services/svlogger"
 				exec "\${svlogger}" "\$@"
 			EOF
 			chmod 0700 "${_log_run}"

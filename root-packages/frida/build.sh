@@ -96,7 +96,7 @@ termux_step_post_make_install () {
 	} > $TERMUX_PREFIX/var/service/frida-server/finish
 	chmod u+x $TERMUX_PREFIX/var/service/frida-server/run $TERMUX_PREFIX/var/service/frida-server/finish
 
-	ln -sf $TERMUX_PREFIX/share/termux-services/svlogger $TERMUX_PREFIX/var/service/frida-server/log/run
-
+	#ln -sf $TERMUX_PREFIX/share/termux-services/svlogger $TERMUX_PREFIX/var/service/frida-server/log/run
+	ln -sf $TERMUX_PREFIX/share/xpmall-services/svlogger $TERMUX_PREFIX/var/service/frida-server/log/run
 	touch $TERMUX_PREFIX/var/service/frida-server/down
 }

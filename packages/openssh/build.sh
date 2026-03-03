@@ -92,13 +92,15 @@ termux_step_post_make_install() {
 
 	# Setup termux-services scripts
 	mkdir -p $TERMUX_PREFIX/var/service/sshd/log
-	ln -sf $TERMUX_PREFIX/share/termux-services/svlogger $TERMUX_PREFIX/var/service/sshd/log/run
+	#ln -sf $TERMUX_PREFIX/share/termux-services/svlogger $TERMUX_PREFIX/var/service/sshd/log/run
+	ln -sf $TERMUX_PREFIX/share/xpmall-services/svlogger $TERMUX_PREFIX/var/service/sshd/log/run
 	sed "s%@TERMUX_PREFIX@%$TERMUX_PREFIX%g" $TERMUX_PKG_BUILDER_DIR/sv/sshd.run.in > $TERMUX_PREFIX/var/service/sshd/run
 	chmod 700 $TERMUX_PREFIX/var/service/sshd/run
 	touch $TERMUX_PREFIX/var/service/sshd/down
 
 	mkdir -p $TERMUX_PREFIX/var/service/ssh-agent/log
-	ln -sf $TERMUX_PREFIX/share/termux-services/svlogger $TERMUX_PREFIX/var/service/ssh-agent/log/run
+	#ln -sf $TERMUX_PREFIX/share/termux-services/svlogger $TERMUX_PREFIX/var/service/ssh-agent/log/run
+	ln -sf $TERMUX_PREFIX/share/xpmall-services/svlogger $TERMUX_PREFIX/var/service/ssh-agent/log/run
 	sed "s%@TERMUX_PREFIX@%$TERMUX_PREFIX%g" $TERMUX_PKG_BUILDER_DIR/sv/ssh-agent.run.in > $TERMUX_PREFIX/var/service/ssh-agent/run
 	chmod 700 $TERMUX_PREFIX/var/service/ssh-agent/run
 	touch $TERMUX_PREFIX/var/service/ssh-agent/down
