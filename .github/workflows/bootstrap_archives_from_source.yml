@@ -18,7 +18,7 @@ jobs:
       matrix:
         arch:
           - aarch64
-    if: github.repository == 'wofly98/termux-packages'
+    if: github.repository == 'TT426/termux-packages'
     steps:
       - name: Git clone
         uses: actions/checkout@v4
