@@ -10,25 +10,32 @@ TERMUX_PKG_BUILD_IN_SRC=true
 TERMUX_PKG_SKIP_SRC_CONFIGURE=true
 
 termux_step_pre_configure() {
-    export PATH="${TERMUX_PREFIX}/bin:${PATH}"
-    if ! command -v pg_config &>/dev/null; then
-        termux_error_exit "pg_config not found. Is 'postgresql' package installed?"
+    if $TERMUX_ON_DEVICE_BUILD; then
+        termux_error_exit "Package '$TERMUX_PKG_NAME' is not safe for on-device builds."
     fi
-    CFLAGS+=" -DHAVE_SIGSTKSZ=0"
+
+    export PATH="${TERMUX_PREFIX}/bin:${PATH}"
+
+    if ! command -v pg_config &>/dev/null; then
+        termux_error_exit "pg_config not found — make sure 'postgresql' is built first."
+    fi
+
+    CFLAGS+=" -DUSE_UNNAMED_POSIX_SEMAPHORES=1"
+
     CFLAGS+=" -Wno-error"
 }
 
 termux_step_make() {
     make -j "${TERMUX_PKG_MAKE_PROCESSES}" \
-        PG_CONFIG="${TERMUX_PREFIX}/bin/pg_config" \
         USE_PGXS=1 \
+        PG_CONFIG="${TERMUX_PREFIX}/bin/pg_config" \
         CC="${CC}" \
         CFLAGS="${CFLAGS}"
 }
 
 termux_step_make_install() {
     make install \
-        PG_CONFIG="${TERMUX_PREFIX}/bin/pg_config" \
         USE_PGXS=1 \
+        PG_CONFIG="${TERMUX_PREFIX}/bin/pg_config" \
         DESTDIR="${TERMUX_PKG_DESTDIR}"
 }
